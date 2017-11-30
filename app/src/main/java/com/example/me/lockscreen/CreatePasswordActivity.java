@@ -14,8 +14,13 @@ public class CreatePasswordActivity extends AppCompatActivity {
 
     EditText editText1, editText2;
     Button button;
-    static int userId=0;
+    private static int userId=0;
 
+
+
+    public static int getUserID() {
+        return userId;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +44,14 @@ public class CreatePasswordActivity extends AppCompatActivity {
                         SharedPreferences settings= getSharedPreferences("PREFS", 0);
                         SharedPreferences.Editor editor= settings.edit();
                         editor.putString("password", text1);
+                        editor.putString("UserID", ""+ userId);
                         editor.apply();
-                        Log.d("UserID", "UserID is " + userId);
+
+                        Logger.writeFile("Creating Password");
+                        Logger.writeFile("UserID: " + userId);
+                        Logger.writeFile("PIN created is : " + text1);
+                        Logger.writeFile("Password for user " + userId + " has been created");
+                        Logger.writeFile("------------------");
                         //enter the app
                         Intent intent= new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);

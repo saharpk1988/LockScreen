@@ -1,0 +1,4 @@
+#Thu Nov 30 07:49:48 CET 2017
+base.0=C\:\\Project\\LockScreen\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
